@@ -1,0 +1,41 @@
+.article {
+  margin-bottom: 100px;
+}
+
+.article .col-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 30px;
+}
+
+.article section {
+  margin-bottom: 50px;
+}
+
+.article section p {
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+.article .col-2 p:last-child {
+  margin-bottom: 0;
+}
+
+.article ul {
+  list-style: disc inside none;
+  margin-bottom: 20px;
+}
+
+.article li {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 599px) {
+  .article .col-2 {
+    display: block;
+  }
+
+  .article .col-2 .noMobile {
+    display: none;
+  }
+}

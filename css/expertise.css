@@ -1,0 +1,22 @@
+.rectangleBackground {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background: var(--colorPrimary);
+  margin-bottom: 1.8rem;
+}
+
+.rectangleBackground > svg {
+  fill: white;
+}
+
+.rectangleBackground ~ h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.rectangleBackground ~ p {
+  margin-bottom: 1.5rem;
+}

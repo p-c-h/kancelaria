@@ -1,0 +1,107 @@
+header {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.06),
+    0px 0px 2px rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+header .containerCenteredNotFullWidth {
+  /* 
+  Makes the logo and mainMenu appear alongside on desktop.
+  +-- header .containerCenteredNotFullWidth
+  |   +-- .containerForLogoAndHamburger
+  |       +-- logo, because .hamburger is hidden on desktop
+  |   +-- .mainMenu 
+  */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.mainMenu {
+  /* The following is responsible for the appearance of the menu on desktop. */
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.mainMenu a {
+  /* The following exists so .mainMenu a:hover::after can have a position of absolute */
+  position: relative;
+}
+
+.mainMenu a:link {
+  color: var(--colorTextBlackSoft);
+  text-decoration: none;
+}
+
+.mainMenu a:visited {
+  color: var(--colorTextBlackSoft);
+}
+
+.mainMenu a:hover {
+  color: var(--colorTextBlack);
+  text-decoration: none;
+}
+
+.mainMenu a:hover::after {
+  /* The following has a position of absolute because otherwise on hover the element becomes higher and justify-center on the parent moves everything to be centered. I have learned about ::before and ::after from Kevil Powells yt video series. */
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: var(--colorGold);
+  display: block;
+  position: absolute;
+}
+
+@media (max-width: 599px) {
+  .hamburger {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  .containerForLogoAndHamburger {
+    /* For when there is no menu visible, to keep the logo and hamburger apart */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+
+  .mainMenu {
+    /* The following is responsible for the appearance of the menu on mobile */
+    /* display: none; */
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /*
+    The following adjustment expands the menu to full height and evenly spaces the links, particularly enhancing the visual layout when there are more than four links.
+    justify-content: space-around;
+    height: calc(100vh - 80px);
+    gap: 0; */
+  }
+
+  .mainMenu li {
+    /* The following margin-bottom should be equal to the top & bottom padding on mobiles .mainMenu */
+    margin-bottom: 30px;
+  }
+
+  .mainMenu a:hover::after {
+    display: none;
+  }
+
+  .mainMenu li:last-of-type {
+    margin-bottom: 0;
+  }
+
+  header .containerCenteredNotFullWidth {
+    /* For some reason without the following (leaving it display: flex) the logo & hamburger weren't spaced-between across the entire width on mobile. */
+    display: block;
+  }
+}

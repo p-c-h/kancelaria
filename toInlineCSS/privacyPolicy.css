@@ -1,0 +1,26 @@
+.oWMzug5 strong {
+  font-weight: bold;
+}
+
+.oWMzug5 ul {
+  list-style: unset;
+  margin-left: 25px;
+}
+
+.oWMzug5 p,
+.oWMzug5 li {
+  line-height: 2;
+}
+
+.oWMzug5 li ul {
+  margin-left: 25px;
+}
+
+.oWMzug5 li p {
+  display: inline;
+}
+
+.oWMzug5 h2 {
+  text-align: center;
+  margin-top: 1.6rem;
+}

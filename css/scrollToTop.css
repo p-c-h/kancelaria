@@ -1,0 +1,24 @@
+.scrollToTop {
+  /* value related to footer margin bottom */
+  margin-bottom: 40px;
+  display: block;
+  float: right;
+  color: var(--colorPrimary);
+}
+
+.scrollToTop:hover {
+  text-decoration: underline;
+}
+
+/*
+The div wrapping the .containerCenteredNotFullWidth containter is needed or else every thing is moved to the center 
++-- div
+    +-- .containerCenteredNotFullWidth
+*/
+
+@media (max-width: 599px) {
+  .scrollToTop {
+    float: none;
+    text-align: center;
+  }
+}

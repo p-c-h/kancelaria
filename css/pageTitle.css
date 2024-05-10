@@ -1,0 +1,25 @@
+.pageTitle {
+  background-color: var(--colorBlueGray50);
+  margin-bottom: 60px;
+}
+
+.pageTitle > .containerCenteredNotFullWidthSmaller {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.pageTitle h1 {
+  font-size: 2.5rem;
+}
+
+/* 
+.pageTitle::first-letter {
+  font-size: 2rem;
+} */
+
+@media (max-width: 599px) {
+  .pageTitle > .containerCenteredNotFullWidthSmaller {
+    justify-content: center;
+  }
+}

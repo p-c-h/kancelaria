@@ -1,0 +1,64 @@
+.imageCompanyDetails {
+  margin-bottom: 60px;
+}
+
+.companyDetailsContainer {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* top: 36.6px; */
+  top: 50%;
+  left: 36.6px;
+  /* bottom: 36.6px; */
+  /* After setting the top to 50% transform moves the top up by 50% of the element */
+  transform: translateY(-50%);
+  padding: 20px 24.4px;
+}
+
+.companyDetailsContainer p {
+  font-size: 1.1rem;
+  margin-bottom: 1em;
+}
+.companyDetailsContainer p:last-of-type {
+  margin-bottom: 0;
+}
+
+.companyDetailsContainer .title {
+  font-size: 0.8rem;
+  margin-bottom: 0.2em;
+  display: flex;
+  align-items: center;
+}
+
+.mapImageContainer {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.mapImageContainer iframe {
+  width: 100%;
+}
+
+@media (max-width: 599px) {
+  .companyDetailsContainer {
+    position: unset;
+    transform: none;
+  }
+
+  .imageCompanyDetails img {
+    margin-bottom: 60px;
+  }
+
+  .mapImageContainer {
+    flex-wrap: wrap;
+  }
+
+  .mapImageContainer img {
+    /* This is here instead of the responsiveImage in class because when I set width: 100% on desktop the map doesn't grow, and on mobile the image is not responsive */
+    width: 100%;
+  }
+
+  .mapImageContainer iframe {
+    min-height: 500px;
+  }
+}

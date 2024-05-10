@@ -1,0 +1,65 @@
+/* jzi6Mxf poprzednio footer ale w blockquote jest footer */
+.jzi6Mxf {
+  /* The sharedSpacing custom var is here so you know what should have equal spacing */
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.58);
+  --sharedSpacing: 40px;
+  /* I've set padding-bottom & not margin-bottom because with the latter the shadow showed underneath it */
+  /* padding-bottom: var(--sharedSpacing); */
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1), 0 0 2px rgba(0, 0, 0, 0.06),
+    0 0 2px rgba(0, 0, 0, 0.07);
+}
+
+.jzi6Mxf .ShDESXE {
+  padding-top: var(--sharedSpacing);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.jzi6Mxf .ShDESXE img:first-of-type {
+  /* Applies bottom margin to the logo img */
+  margin-bottom: var(--sharedSpacing);
+}
+
+.companyInfoGridContainer {
+  /* Auto sized means it will fit the content. In this case I set auto for the last column so it hugs the right border of the container. */
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 100px;
+  row-gap: var(--sharedSpacing);
+}
+
+.jzi6Mxf .companyInfoWithIcon > * {
+  margin-bottom: 0.5em;
+}
+
+.jzi6Mxf .companyInfoWithIcon p:first-of-type {
+  /* Makes the first p element colored */
+}
+
+.jzi6Mxf .companyInfoWithIcon > *:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 599px) {
+  .jzi6Mxf .ShDESXE {
+    /* Centers the logo and the companyInfoGridContainer which are in one column due to flex-wrap */
+    justify-content: center;
+  }
+
+  .jzi6Mxf .logo {
+    display: none;
+  }
+
+  .companyInfoGridContainer {
+    /* The following changes the grid to one column, centers the content of each grid cell and centers the text */
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    justify-items: center;
+    text-align: center;
+  }
+}

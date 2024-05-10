@@ -1,0 +1,47 @@
+.portraitDetails {
+  display: flex;
+  gap: 25px;
+  align-items: start;
+  margin-bottom: 100px;
+  border-radius: 20px;
+}
+
+.portraitDetails ul {
+  list-style: disc inside none;
+  margin-bottom: 50px;
+}
+
+.portraitDetails li {
+  margin-bottom: 10px;
+}
+
+.portraitDetails .nameTitle {
+  font-size: 1.8rem;
+  background: whitesmoke;
+  color: var(--colorPrimary);
+  padding: 0.5rem;
+  padding-left: calc(0.5rem + 7.2px);
+  margin-bottom: 35px;
+}
+
+.portraitDetails .marginBottom10 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 599px) {
+  .portraitDetails {
+    flex-wrap: wrap;
+    background-color: #ffffff;
+  }
+
+  .portraitDetails .nameTitle {
+    background: none;
+    text-align: center;
+  }
+
+  .portraitDetails .imageBackground {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

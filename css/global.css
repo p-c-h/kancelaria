@@ -1,0 +1,180 @@
+:root {
+  --colorPrimary: #3f51b5;
+  --colorGray800: #424242;
+  --colorGray600: #757575;
+  --colorGray300: #e0e0e0;
+  --colorBlueGray50: #eceff1;
+
+  --colorTextBlack: rgba(0, 0, 0, 0.87);
+  --colorGold: #cba258;
+  --colorTextBlackSoft: rgba(0, 0, 0, 0.58);
+  --colorCeramic: #edebe9;
+  --colorNeutralCool: #f9f9f9;
+  --colorNeutralWarm: #f2f0eb;
+}
+
+body {
+  /* Flex is needed so main will take all available space. */
+  line-height: 1.5;
+  font-size: 1.1rem;
+  /* The Deloitte stack */
+  /* font-family: Open Sans, Calibri, Helvetica, sans-serif; */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  color: #212121;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+img {
+  /* The following deals with not being able to set margin: 0 on inline img */
+  display: block;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2,
+.phony2 {
+  /* use phony2 when you don't want an h2 */
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.phony2 {
+  display: block;
+}
+
+a:link,
+a:visited {
+  color: var(--colorPrimary);
+  fill: var(--colorPrimary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.containerCenteredNotFullWidth {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.containerCenteredNotFullWidthSmaller {
+  /* This is to make the content look like it's indentet. The value is based of of the page title h1, which has a bottom line-height of 40px, and to make it look like a padding on the bottom and the left I'm substraction 40px (20 from both sides) from 1100px */
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+b,
+.boldText {
+  font-weight: bold;
+}
+
+.subText {
+  color: #616161;
+  fill: #616161;
+}
+
+.relative {
+  position: relative;
+}
+
+.fullWidthBgColor {
+  /* 2023-10-19 callToAction,  */
+  padding-block: 100px;
+  margin-bottom: 100px;
+}
+
+.responsiveImage {
+  width: 100%;
+  height: auto;
+}
+
+.colorPrimary {
+  color: var(--colorPrimary);
+}
+
+.colorBlueGray50 {
+  background: var(--colorBlueGray50);
+}
+
+.textBlock {
+  max-width: 60ch;
+  line-height: 2;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.btnGhost {
+  border: 2px solid white;
+  background: none;
+  color: #fff;
+  font: inherit;
+  outline: inherit;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnGhost:hover,
+.btnGhost:focus {
+  background: #283593;
+}
+
+.quote {
+  /* teamMember */
+  font-style: italic;
+  text-align: center;
+}
+
+.quote::before,
+.quote::after {
+  display: flex;
+}
+
+.quote::before {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="%233f51b5" width="30px" height="30px"><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z"/></svg>');
+  margin-bottom: 10px;
+}
+
+.quote::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="%233f51b5" width="30px" height="30px"><path d="M448 296c0 66.3-53.7 120-120 120h-8c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H320c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72zm-256 0c0 66.3-53.7 120-120 120H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h8c30.9 0 56-25.1 56-56v-8H64c-35.3 0-64-28.7-64-64V160c0-35.3 28.7-64 64-64h64c35.3 0 64 28.7 64 64v32 32 72z"/></svg>');
+  margin-top: 10px;
+  justify-content: end;
+}
+
+blockquote footer {
+  text-align: center;
+}
+
+.dividerNarrow {
+  height: 3px;
+  background: var(--colorPrimary);
+  width: 50px;
+  margin-inline: auto;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 599px) {
+  .paddingMobile {
+    padding-inline: 15px;
+  }
+}

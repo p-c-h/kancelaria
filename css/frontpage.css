@@ -1,0 +1,38 @@
+.divOverImg {
+  max-height: calc(100vh - 80px);
+  overflow-y: hidden;
+  margin-bottom: 80px;
+}
+
+.divOverImg > div {
+  box-sizing: border-box;
+  position: absolute;
+  background: #eceff1;
+  color: var(--colorPrimary);
+  right: 50px;
+  bottom: 50px;
+  padding: 30px;
+  padding-right: 80px;
+}
+
+.divOverImg > div > p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 599px) {
+  .divOverImg {
+    max-height: none;
+    /* For some reason display flex f-ked my CLS by preventing space alocation for the image thus shifting my layout when it finally loaded */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+  }
+  .divOverImg > div {
+    position: relative;
+    margin-top: -60px;
+    margin-inline: auto;
+    width: 90%;
+    right: unset;
+    bottom: unset;
+  }
+}

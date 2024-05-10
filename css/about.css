@@ -1,0 +1,13 @@
+.aboutLogo {
+  display: flex;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 599px) {
+  .aboutLogo {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,26 @@
+.googleSmall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2rem;
+  color: var(--colorGray600);
+  border-block: 1px solid var(--colorGray300);
+  padding: 35px;
+  margin-block: 50px;
+}
+
+.googleSmall > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.googleSmall .svgContainer {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 29 29" fill="%23fbbc05" ><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>')
+    repeat-x;
+  height: 24px;
+  width: 120px;
+}

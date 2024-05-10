@@ -1,0 +1,29 @@
+.grid {
+  grid-gap: 3.5rem;
+  display: grid;
+  /* grid-template-columns also need to be set so do it inline e.g.: grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  grid-template-rows: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.grid > div {
+  /* The grid items need to be of display flex, otherwise margin-top:auto on <a> tags won't work and the links won't be at the bottom. Link: https://stackoverflow.com/questions/68475996/why-does-margin-top-auto-only-work-with-flex-in-the-body */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: white;
+}
+
+.grid .bottomLink {
+  margin-top: auto;
+}
+
+@media (max-width: 599px) {
+  .grid {
+    grid-auto-rows: auto;
+  }
+
+  .grid > div {
+    padding-block: 40px;
+  }
+}
