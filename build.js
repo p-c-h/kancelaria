@@ -228,18 +228,24 @@ function replaceKeywordsRecursive(content) {
 
         if (propsAsString) {
           const props = JSON.parse(propsAsString);
-          let foo = keywordHtmlContent;
-          for (const [key, value] of Object.entries(props)) {
-            const keyword = `*${key}*`;
-            const bar = foo.replace(keyword, value.replaceAll("_", " "));
-            /* with this you can e.g. pass optional additional class to e.g. pageTitle like so: 
-            in build.js {"title":"Zespół”,”optionalClass”:”h1Smaller”} 
-            and in pageTitle.html 
-            <section class="pageTitle">   <div class="containerCenteredNotFullWidthSmaller paddingMobile *optionalClass*”>     <h1>*title*</h1>   </div> </section> 
-            If I don’t want an additional class I can do ”optionalClass”:”” and it will replace *optionalClass* to an empty string. */
-            foo = bar;
-          }
-          return foo;
+          let replacedHtmlContent = keywordHtmlContent;
+          Object.keys(props).forEach((key) => {
+            const placeholder = `*${key}*`;
+            const value = props[key];
+            // Check if the placeholder exists in the content before attempting to replace it
+            if (replacedHtmlContent.includes(placeholder)) {
+              replacedHtmlContent = replacedHtmlContent.replaceAll(
+                placeholder, // Placeholder to replace
+                value.replaceAll("_", " ") // Replace with corresponding value
+              );
+            }
+          });
+          // Remove any remaining placeholders that don't have corresponding keys in props
+          replacedHtmlContent = replacedHtmlContent.replaceAll(
+            /\*[^*]+\*/g, // Matches any string enclosed in asterisks
+            "" // Replace with an empty string to remove it
+          );
+          return replacedHtmlContent;
         } else {
           return keywordHtmlContent;
         }
