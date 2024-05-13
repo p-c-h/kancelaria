@@ -232,6 +232,11 @@ function replaceKeywordsRecursive(content) {
           for (const [key, value] of Object.entries(props)) {
             const keyword = `*${key}*`;
             const bar = foo.replace(keyword, value.replaceAll("_", " "));
+            /* with this you can e.g. pass optional additional class to e.g. pageTitle like so: 
+            in build.js {"title":"Zespół”,”optionalClass”:”h1Smaller”} 
+            and in pageTitle.html 
+            <section class="pageTitle">   <div class="containerCenteredNotFullWidthSmaller paddingMobile *optionalClass*”>     <h1>*title*</h1>   </div> </section> 
+            If I don’t want an additional class I can do ”optionalClass”:”” and it will replace *optionalClass* to an empty string. */
             foo = bar;
           }
           return foo;
