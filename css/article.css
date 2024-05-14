@@ -2,6 +2,12 @@
   margin-bottom: 100px;
 }
 
+/* article obsługuje trzy style: zdjęcie na górze i z boku, jak w prawie rodzinnym; zdjęcie z boku, jak w rozwodzie; zdjęcie po pierwszym paragrafie .slimArticle */
+
+.slimArticle {
+  max-width: 600px;
+}
+
 .article .col-2 {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -17,7 +23,8 @@
   margin-bottom: 18px;
 }
 
-.article .col-2 p:last-child {
+.article .col-2 p:last-child,
+.article .slim p:last-child {
   margin-bottom: 0;
 }
 

@@ -13,6 +13,11 @@
   font-size: 2.5rem;
 }
 
+/* smaller than the default h1 style. Better for lengthy blog post titles. */
+.pageTitle .blogPostH1 {
+  font-size: 2rem;
+}
+
 /* 
 .pageTitle::first-letter {
   font-size: 2rem;
