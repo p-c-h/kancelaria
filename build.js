@@ -132,7 +132,7 @@ const data = [
     titleTag: "Adwokat Kielce Rozwody - Kancelaria Adwokacka - Rozwód Kielce",
     metaContent:
       "Sprawami rozwodowymi i o podział majątku w Kielcach zajmują się Adwokat Karolina Bronkowska, Adwokat Piotr Chróściel i Adwokat Magdalena Kobryń. Zadzwoń teraz!",
-    body: '&header& <main>&pageTitle.{"title":"Adwokat_Kielce_Rozwody_-_Kancelaria_Adwokacka","optionalClass":"class=\'blogPostH1\'"}& &articleRozwod& &google& &callToAction&</main> &scrollToTop& &footer&',
+    body: '&header& <main>&pageTitle.{"title":"Adwokat_Kielce_Rozwody_-_Kancelaria_Adwokacka"}& &articleRozwod& &google& &callToAction&</main> &scrollToTop& &footer&',
   },
   {
     outputFileName: "zasiedzenie-nieruchomosci",
