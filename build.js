@@ -132,7 +132,7 @@ const data = [
     titleTag: "Adwokat Kielce Rozwody - Kancelaria Adwokacka - Rozwód Kielce",
     metaContent:
       "Sprawami rozwodowymi i o podział majątku w Kielcach zajmują się Adwokat Karolina Bronkowska, Adwokat Piotr Chróściel i Adwokat Magdalena Kobryń. Zadzwoń teraz!",
-    body: '&header& <main>&pageTitle.{"title":"Adwokat_Kielce_Rozwody_-_Kancelaria_Adwokacka"}& &articleRozwod& &google& &callToAction&</main> &scrollToTop& &footer&',
+    body: '&header& <main>&pageTitle.{"title":"Adwokat_Kielce_Rozwody_-_Kancelaria_Adwokacka","optionalClass":"class=\'blogPostH1\'"}& &articleRozwod& &google& &callToAction&</main> &scrollToTop& &footer&',
   },
   {
     outputFileName: "zasiedzenie-nieruchomosci",
@@ -140,6 +140,12 @@ const data = [
     metaContent:
       "Zasiedzenie to nabycie własności przez długotrwałe posiadanie. Dowiedz się, jak działa zasiedzenie nieruchomości. Konsultacje z doświadczonym adwokatem Kielce.",
     body: '&header& <main>&pageTitle.{"title":"Zasiedzenie_Adwokat_Kielce"}& &articleZasiedzenieNieruchomosci& &google& &callToAction&</main> &scrollToTop& &footer&',
+  },
+  {
+    outputFileName: "opieka-naprzemienna",
+    titleTag: "Opieka naprzemienna",
+    metaContent: "",
+    body: '&header& <main>&pageTitle.{"title":"Opieka_naprzemienna_nad_dzieckiem_–_co_to_takiego_i_w_jakich_sytuacjach_może_być_stosowana?"}& &articleOpiekaNaprzemienna& &google& &callToAction&</main> &scrollToTop& &footer&',
   },
   {
     outputFileName: "polityka-prywatnosci",
@@ -233,9 +239,11 @@ function replaceKeywordsRecursive(content) {
             const placeholder = `*${key}*`;
             const value = props[key];
             // Check if the placeholder exists in the content before attempting to replace it
+            // if you need to add whole phrase class=… or style=… you need to escape double quotes in JSON like so "optionalClass":"class=\’”blogPostH1\’”
             if (replacedHtmlContent.includes(placeholder)) {
               replacedHtmlContent = replacedHtmlContent.replaceAll(
                 placeholder, // Placeholder to replace
+                // underscore is needed otherwise keyword won’t match keywordRegex
                 value.replaceAll("_", " ") // Replace with corresponding value
               );
             }
